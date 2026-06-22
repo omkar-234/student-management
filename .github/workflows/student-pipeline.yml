@@ -1,0 +1,21 @@
+name: Student Management Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: [self-hosted, dev]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Runner Info
+        run: |
+          echo "Pipeline Running"
+          hostname
+          pwd
+          ls -la
